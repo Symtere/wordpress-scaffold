@@ -1,0 +1,24 @@
+node_modules/
+/vendor
+test/
+config/migrations/*.sh
+config/*.js
+migrations/*.sh
+test.js
+
+*.lock
+*-lock.json
+report.*json
+*.map
+*.log
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+.vscode
+*.DS_Store
+.idea
+.phpintel
+/nbproject/*
+nbproject/*

@@ -1,0 +1,33 @@
+{
+  "name": "wp-scaffold",
+  "version": "1.0.0",
+  "description": "wp project",
+  "scripts": {
+    "scaffold": "node scaffold/prompt.js"{{#themeChoice.length}},{{/themeChoice.length}}
+    {{#themeChoice.length}}
+    "start": "npm-run-all --parallel serve sass",
+    "scss": "sass {{{themePath}}}/scss/:{{{themePath}}}/ --style compressed",
+    "sass": "sass --watch {{{themePath}}}/scss/:{{{themePath}}}/ --style compressed",
+    "watch": "nodemon -e \"{{{themePath}}}/scss/**/**/**/*.scss\" -x \"npm run scss\"",
+    "serve": "browser-sync start --proxy \"https://{{{projectSlug}}}{{{vhost}}}\" --files \"{{{themePath}}}/*.css\" \"{{{themePath}}}/assets/js/*.js\" \"{{{themePath}}}/**/**/*.php\""
+    {{/themeChoice.length}}
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://{{{readmeProjectGithubUrl}}}"
+  },
+  "author": "gsupiot",
+  "license": "ISC",
+  "devDependencies": {
+    "chalk": "^4.1.2",
+    "clear": "^0.1.0",
+    "figlet": "^1.5.2",
+    "inquirer": "^8.2.0",
+    "mustache": "^4.2.0",
+    "shelljs": "^0.8.4",
+    "slugify": "^1.6.2",
+    "nodemon": "^2.0.6",
+    "npm-run-all": "latest",
+    "sass": "1.27.0"
+  }
+}

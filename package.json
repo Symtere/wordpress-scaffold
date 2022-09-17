@@ -1,0 +1,30 @@
+{
+  "name": "wp-scaffold",
+  "version": "1.0.0",
+  "description": "wp project",
+  "scripts": {
+    "scaffold": "node scaffold/prompt.js",
+    "start": "npm-run-all --parallel serve watch",
+    "scss": "sass ./wp-content/themes/custom/scss/:./wp-content/themes/custom/ --style compressed",
+    "watch": "nodemon -e \"./wp-content/themes/custom/scss/**/**/**/*.scss\" -x \"npm run scss\"",
+    "serve": "browser-sync start --proxy \"https://new-project.local\" --files \"./wp-content/themes/custom/*.css\" \"./wp-content/themes/custom/assets/js/*.js\" \"./wp-content/themes/custom/**/**/*.php\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:Symtere/...-new-project"
+  },
+  "author": "gsupiot",
+  "license": "ISC",
+  "devDependencies": {
+    "chalk": "^4.1.2",
+    "clear": "^0.1.0",
+    "figlet": "^1.5.2",
+    "inquirer": "^8.2.0",
+    "mustache": "^4.2.0",
+    "shelljs": "^0.8.4",
+    "slugify": "^1.6.2",
+    "nodemon": "^2.0.6",
+    "npm-run-all": "latest",
+    "sass": "1.27.0"
+  }
+}
