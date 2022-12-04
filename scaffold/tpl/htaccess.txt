@@ -18,6 +18,7 @@ RewriteRule . /index.php [L]
 
 # Extra Security Headers
 <IfModule mod_headers.c>
+    Header set Content-Security-Policy "base-uri 'self';"
     Header set X-XSS-Protection "1; mode=block"
     Header always append X-Frame-Options SAMEORIGIN
     Header set X-Content-Type-Options nosniff
